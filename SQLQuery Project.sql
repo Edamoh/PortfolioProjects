@@ -13,8 +13,8 @@ WHERE ActiveCases is not NULL
 GROUP BY Country, TotalCases
 ORDER BY 1,2 DESC
 
---Joining Northamerican and Southamerica covid data together (Althugh fully joined, Nothing here is 
-distinct to both columns in the data that is why we have alot of columns with null)
+--Joining Northamerican and Southamerica covid data together (Although fully joined, Nothing here is 
+distinct to both columns in the data and that is why we have alot of columns with null values)
 
 SELECT *
 FROM Northamericacovid N 
