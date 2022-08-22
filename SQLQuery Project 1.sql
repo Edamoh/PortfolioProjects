@@ -33,3 +33,21 @@ SELECT Country, Population, MAX(TotalCases) as HighestInfectionCount, MAX(TotalC
 FROM Northamericacovid
 GROUP BY Country, Population
 ORDER BY 1 desc
+
+SELECT SUM(TotalCases) Overall_Cases, SUM(TotalDeaths) Overall_Dead, SUM(TotalDeaths)/SUM(TotalCases)*100 PercentageDead
+FROM Northamericacovid
+ORDER BY 1,2
+
+SELECT Country,TotalDeaths
+FROM Northamericacovid  
+ORDER BY TotalDeaths DESC
+
+SELECT *
+FROM Northamericacovid
+union
+SELECT *
+FROM Southamericacovid 
+
+SELECT Country,TotalDeaths
+FROM Southamericacovid  
+ORDER BY TotalDeaths DESC
