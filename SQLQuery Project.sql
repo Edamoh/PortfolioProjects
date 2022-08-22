@@ -14,7 +14,7 @@ GROUP BY Country, TotalCases
 ORDER BY 1,2 DESC
 
 --Joining Northamerican and Southamerica covid data together (Although fully joined, Nothing here is 
-distinct to both columns in the data and that is why we have alot of columns with null values)
+distinct to each column in the data and that is why we have alot of columns with null values)
 
 SELECT *
 FROM Northamericacovid N 
@@ -34,7 +34,7 @@ ON N.Country = S.Country
 --Looking at Population vs Active Cases using Partition by
 
 SELECT N.Country, N.TotalDeaths,N.ActiveCases, S.Country, S.TotalDeaths, S.ActiveCases
-,SUM(S.ActiveCases) OVER  (Partition by N.Country, N.TotalDeaths,N.ActiveCases)
+,SUM(S.ActiveCases) OVER  (Partition by N.Country, N.TotalDeaths, N.ActiveCases)
 FROM Northamericacovid N 
 JOIN Southamericacovid S
 ON N.Country = S.Country
